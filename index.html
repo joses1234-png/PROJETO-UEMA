@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efetividade da Justiça | Seleção de Questionário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        oswald: ['Oswald', 'sans-serif'],
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        bordo: {
+                            800: '#3e060d',
+                            900: '#5A0B14',
+                            950: '#2a0408',
+                        },
+                        carmim: {
+                            500: '#e54251',
+                            600: '#D33F49',
+                            700: '#b82e37',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .geo-pattern {
+            background-color: #5A0B14;
+            background-image: 
+                polygon(10px 10px, 20px 20px),
+                radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px),
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 24px 24px, 40px 40px, 40px 40px;
+        }
+
+        .poster-card {
+            background-color: #c83745;
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .poster-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body class="bg-bordo-900 text-white min-h-full flex flex-col justify-between font-sans geo-pattern relative overflow-x-hidden">
+
+    <header class="text-white hero-diagonal pb-16 pt-8 px-4 sm:px-6 lg:px-8 border-b-4 border-carmim-600 relative z-10 shadow-2xl">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-block bg-carmim-600 text-white font-oswald text-xs sm:text-sm uppercase tracking-widest px-4 py-1.5 rounded mb-4 font-bold">
+                PROJETO DE PESQUISA ACADÊMICA
+            </div>
+            
+            <h1 class="font-oswald text-3xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight leading-tight mb-4 text-white drop-shadow-lg">
+                EFETIVIDADE DA JUSTIÇA E DURAÇÃO DO PROCESSO
+            </h1>
+            
+            <p class="font-oswald text-lg sm:text-2xl text-slate-200 uppercase tracking-wide font-medium max-w-3xl mx-auto border-t border-slate-700/80 pt-3 drop-shadow">
+                UMA ANÁLISE DA PRESTAÇÃO JURISDICIONAL NA COMARCA DE CODÓ - MA
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-8 relative z-20 flex-grow w-full mb-12">
+        <div class="text-center mb-8 sm:mb-10">
+            <h2 class="font-oswald text-2xl sm:text-3xl font-bold uppercase tracking-wide text-white drop-shadow-md">
+                SELECIONE O SEU PERFIL PARA RESPONDER AO QUESTIONÁRIO
+            </h2>
+            <div class="w-24 h-1 bg-carmim-600 mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+            
+            <div class="poster-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative group">
+                <div>
+                    <div class="w-16 h-16 bg-black text-white rounded-xl flex items-center justify-center text-3xl mb-6 mx-auto border border-white/20">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    
+                    <span class="block text-center font-oswald text-xs tracking-widest text-white/80 uppercase mb-1">PESQUISA DE CAMPO</span>
+                    
+                    <h3 class="font-oswald text-3xl font-bold text-center text-white uppercase tracking-wider mb-4 border-b border-white/30 pb-3">
+                        ESTUDANTE
+                    </h3>
+                    
+                    <p class="text-white/90 text-sm text-center leading-relaxed mb-6 font-medium">
+                        Destinado aos alunos de Direito e áreas afins que acompanham a dinâmica da Comarca de Codó - MA.
+                    </p>
+                </div>
+
+                <div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScYttDtoBvjcbzdN3aczalGQvozfWW7WHLHwyfOni06LZUafw/viewform" 
+                       target="_self" 
+                       rel="noopener noreferrer" 
+                       class="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl font-oswald text-lg font-bold uppercase tracking-wider text-white bg-black hover:bg-slate-900 active:scale-95 transition-all shadow-lg border border-white/30 group-hover:border-carmim-500">
+                        <span>ACESSAR FORMULÁRIO</span>
+                        <i class="fa-solid fa-chevron-right ml-2 text-sm text-carmim-500"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="poster-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative group">
+                <div>
+                    <div class="w-16 h-16 bg-black text-white rounded-xl flex items-center justify-center text-3xl mb-6 mx-auto border border-white/20">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    
+                    <span class="block text-center font-oswald text-xs tracking-widest text-white/80 uppercase mb-1">PESQUISA DE CAMPO</span>
+                    
+                    <h3 class="font-oswald text-3xl font-bold text-center text-white uppercase tracking-wider mb-4 border-b border-white/30 pb-3">
+                        SERVIDOR
+                    </h3>
+                    
+                    <p class="text-white/90 text-sm text-center leading-relaxed mb-6 font-medium">
+                        Destinado aos servidores públicos, analistas, técnicos e magistrados que atuam na prestação jurisdicional.
+                    </p>
+                </div>
+
+                <div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJvfdqDKSAszDxdLs71JscfVM4sMhJStHlaEbvA1091n1ngw/viewform" 
+                       target="_self" 
+                       rel="noopener noreferrer" 
+                       class="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl font-oswald text-lg font-bold uppercase tracking-wider text-white bg-black hover:bg-slate-900 active:scale-95 transition-all shadow-lg border border-white/30 group-hover:border-carmim-500">
+                        <span>ACESSAR FORMULÁRIO</span>
+                        <i class="fa-solid fa-chevron-right ml-2 text-sm text-carmim-500"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="poster-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative group">
+                <div>
+                    <div class="w-16 h-16 bg-black text-white rounded-xl flex items-center justify-center text-3xl mb-6 mx-auto border border-white/20">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    
+                    <span class="block text-center font-oswald text-xs tracking-widest text-white/80 uppercase mb-1">PESQUISA DE CAMPO</span>
+                    
+                    <h3 class="font-oswald text-3xl font-bold text-center text-white uppercase tracking-wider mb-4 border-b border-white/30 pb-3">
+                        ADVOGADO
+                    </h3>
+                    
+                    <p class="text-white/90 text-sm text-center leading-relaxed mb-6 font-medium">
+                        Destinado aos advogados autônomos e integrantes de escritórios com atuação na Comarca de Codó.
+                    </p>
+                </div>
+
+                <div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScYttDtoBvjcbzdN3aczalGQvozfWW7WHLHwyfOni06LZUafw/viewform" 
+                       target="_self" 
+                       rel="noopener noreferrer" 
+                       class="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl font-oswald text-lg font-bold uppercase tracking-wider text-white bg-black hover:bg-slate-900 active:scale-95 transition-all shadow-lg border border-white/30 group-hover:border-carmim-500">
+                        <span>ACESSAR FORMULÁRIO</span>
+                        <i class="fa-solid fa-chevron-right ml-2 text-sm text-carmim-500"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-black text-white border-t-2 border-carmim-600 py-6 px-4 relative z-10">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-envelope text-carmim-500 text-xl"></i>
+                <div>
+                    <span class="font-oswald text-xs uppercase tracking-wider text-slate-400 block">INFORMAÇÕES DE CONTATO</span>
+                    <a href="mailto:luise.adrielle20@gmail.com" class="font-oswald text-sm sm:text-base text-white hover:text-carmim-500 transition-colors uppercase font-bold">
+                        LUISE.ADRIELLE20@GMAIL.COM
+                    </a>
+                </div>
+            </div>
+            
+            <p class="font-oswald text-xs text-slate-400 uppercase tracking-widest">
+                 UEMA - Campus Codó &copy; <span id="year"></span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
