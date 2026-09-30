@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efetividade da Justiça | Seleção de Questionário</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Oswald e Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
     <script>
@@ -34,8 +37,7 @@
     </script>
 
     <style>
-        .hero-diagonal {
-            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+        .hero-banner {
             background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -61,12 +63,141 @@
             transform: translateY(-6px);
             box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.7);
         }
+
+        /* Custom Scrollbar Claras e Minimalistas para o Popup */
+        .custom-scrollbar-light::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar-light::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .custom-scrollbar-light::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar-light::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Transição de ocultação do modal */
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+        }
     </style>
 </head>
 
-<body class="bg-bordo-900 text-white min-h-full flex flex-col justify-between font-sans geo-pattern relative overflow-x-hidden">
+<body class="bg-bordo-900 text-white min-h-full flex flex-col justify-between font-sans geo-pattern relative overflow-x-hidden overflow-y-hidden">
 
-    <header class="text-white hero-diagonal pb-16 pt-8 px-4 sm:px-6 lg:px-8 border-b-4 border-carmim-600 relative z-10 shadow-2xl">
+    <!-- POPUP / MODAL TCLE (Design Minimalista & Claro (~40% de largura no Desktop)) -->
+    <div id="tcle-modal" class="fixed inset-0 z-[9999] bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 select-none transition-opacity duration-300">
+        <div class="bg-white text-slate-800 rounded-2xl shadow-2xl w-full sm:w-11/12 md:w-3/4 lg:w-[42%] xl:w-[38%] max-w-2xl flex flex-col max-h-[88vh] border border-slate-200 overflow-hidden transform transition-all">
+            
+            <!-- Cabeçalho Minimalista Claro -->
+            <div class="bg-slate-50 px-5 sm:px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 bg-carmim-600/10 text-carmim-600 rounded-lg flex items-center justify-center text-lg font-bold border border-carmim-600/20">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-oswald text-lg sm:text-xl font-bold uppercase tracking-wide text-slate-900">
+                            TERMO DE CONSENTIMENTO (TCLE)
+                        </h2>
+                        <p class="font-oswald text-xs text-carmim-600 font-semibold uppercase tracking-wider">
+                            PESQUISA DE CAMPO — UEMA CAMPUS CODÓ
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corpo do Modal Claro com Scroll Refinado -->
+            <div class="p-5 sm:p-6 overflow-y-auto flex-1 custom-scrollbar-light space-y-4 text-slate-600 leading-relaxed text-xs sm:text-sm bg-white select-text">
+                
+                <div class="bg-slate-50 border-l-4 border-carmim-600 p-3.5 rounded-r-lg border-y border-r border-slate-200/80">
+                    <p class="font-oswald text-[11px] text-carmim-600 uppercase tracking-widest font-bold mb-0.5">
+                        PROJETO DE PESQUISA ACADÊMICA
+                    </p>
+                    <p class="font-oswald text-sm sm:text-base font-bold text-slate-900 uppercase leading-snug">
+                        Efetividade da justiça e duração do processo: uma análise jurisdicional na comarca de Codó - Maranhão
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-slate-50 p-3 rounded-lg text-xs font-sans border border-slate-200">
+                    <div>
+                        <span class="font-bold block text-carmim-600 uppercase">Pesquisadora:</span>
+                        <span class="text-slate-800 font-medium">Luíse Adrielle Sousa Santos</span>
+                    </div>
+                    <div>
+                        <span class="font-bold block text-carmim-600 uppercase">Orientador:</span>
+                        <span class="text-slate-800 font-medium">Prof. Esp. Agenor Filho da Rocha Nogueira</span>
+                    </div>
+                    <div>
+                        <span class="font-bold block text-carmim-600 uppercase">Instituição:</span>
+                        <span class="text-slate-800 font-medium">UEMA - Campus Codó</span>
+                    </div>
+                </div>
+
+                <hr class="border-slate-200 my-2">
+
+                <!-- Texto do TCLE Legível e Limpo -->
+                <div class="space-y-3 text-justify text-slate-600 pr-0.5">
+                    <p>
+                        <strong class="text-slate-900">Prezada(o) Participante,</strong> a presente pesquisa tem como finalidade analisar, de forma crítica e sistematizada, a efetividade da prestação jurisdicional e a duração dos processos na Comarca de Codó-MA, buscando compreender os principais fatores que podem influenciar a morosidade processual e comprometer a concretização do direito fundamental à duração razoável do processo.
+                    </p>
+
+                    <div>
+                        <h4 class="font-oswald text-xs sm:text-sm text-bordo-900 font-bold uppercase tracking-wide mb-0.5">Procedimentos Metodológicos:</h4>
+                        <p>
+                            A coleta de dados será realizada por meio de entrevistas semiestruturadas e/ou aplicação de questionários, direcionados a estudantes de direito, profissionais atuantes em instituições como OAB, Fórum e Varas da Justiça. As informações obtidas serão utilizadas exclusivamente para fins acadêmicos e científicos.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-oswald text-xs sm:text-sm text-bordo-900 font-bold uppercase tracking-wide mb-0.5">Riscos e Desconfortos:</h4>
+                        <p>
+                            Não se prevêem riscos físicos, psicológicos ou sociais relevantes. Contudo, é possível que o(a) participante experimente algum grau de desconforto ao refletir sobre práticas institucionais ou limitações existentes no contexto profissional.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-oswald text-xs sm:text-sm text-bordo-900 font-bold uppercase tracking-wide mb-0.5">Benefícios Potenciais:</h4>
+                        <p>
+                            Espera-se que os resultados da pesquisa contribuam na compreensão dos fatores que influenciam a duração dos processos e a efetividade da prestação jurisdicional na Comarca de Codó-MA, possibilitando a identificação de possíveis barreiras relacionadas à morosidade processual, à estrutura, à gestão e ao funcionamento do Poder Judiciário.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-oswald text-xs sm:text-sm text-bordo-900 font-bold uppercase tracking-wide mb-0.5">Confidencialidade e Sigilo:</h4>
+                        <p>
+                            Todas as informações fornecidas serão tratadas com absoluto sigilo, sendo armazenadas em ambiente seguro e utilizadas apenas para os propósitos desta pesquisa. Os dados serão apresentados de forma agregada, sem qualquer identificação nominal dos participantes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-carmim-500/10 rounded-lg border border-carmim-600/20 text-xs text-slate-600 flex items-start space-x-2.5">
+                    <i class="fa-solid fa-shield-halved text-carmim-600 text-sm mt-0.5"></i>
+                    <span>Ao aceitar, os dados de validação da sessão serão registrados de forma segura para assegurar a integridade da pesquisa.</span>
+                </div>
+            </div>
+
+            <!-- Rodapé Minimalista com Checkbox e Botão Continuar -->
+            <div class="bg-slate-50 px-5 sm:px-6 py-3.5 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <label for="chk-accept" class="flex items-center space-x-2.5 cursor-pointer select-none text-slate-700 font-medium text-xs sm:text-sm">
+                    <input type="checkbox" id="chk-accept" onchange="toggleAceiteButton()" class="w-4 h-4 text-carmim-600 border-slate-300 rounded focus:ring-carmim-500 cursor-pointer accent-carmim-600">
+                    <span class="font-sans font-semibold text-slate-800">Li e aceito os termos</span>
+                </label>
+
+                <button id="btn-accept" disabled onclick="processarAceite()" class="w-full sm:w-auto bg-slate-300 text-slate-400 opacity-60 cursor-not-allowed font-oswald text-base sm:text-lg font-bold uppercase tracking-wider py-2.5 px-7 rounded-xl transition-all flex items-center justify-center space-x-2">
+                    <span>CONTINUAR</span>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <header class="text-white hero-banner py-12 px-4 sm:px-6 lg:px-8 border-b-4 border-carmim-600 relative z-10 shadow-2xl">
         <div class="max-w-5xl mx-auto text-center">
             <div class="inline-block bg-carmim-600 text-white font-oswald text-xs sm:text-sm uppercase tracking-widest px-4 py-1.5 rounded mb-4 font-bold">
                 PROJETO DE PESQUISA ACADÊMICA
@@ -82,7 +213,7 @@
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-8 relative z-20 flex-grow w-full mb-12">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative z-20 flex-grow w-full mb-12">
         <div class="text-center mb-8 sm:mb-10">
             <h2 class="font-oswald text-2xl sm:text-3xl font-bold uppercase tracking-wide text-white drop-shadow-md">
                 SELECIONE O SEU PERFIL PARA RESPONDER AO QUESTIONÁRIO
@@ -92,6 +223,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
             
+            <!-- CARD ESTUDANTE -->
             <div class="poster-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative group">
                 <div>
                     <div class="w-16 h-16 bg-black text-white rounded-xl flex items-center justify-center text-3xl mb-6 mx-auto border border-white/20">
@@ -120,6 +252,7 @@
                 </div>
             </div>
 
+            <!-- CARD SERVIDOR -->
             <div class="poster-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative group">
                 <div>
                     <div class="w-16 h-16 bg-black text-white rounded-xl flex items-center justify-center text-3xl mb-6 mx-auto border border-white/20">
@@ -148,6 +281,7 @@
                 </div>
             </div>
 
+            <!-- CARD ADVOGADO -->
             <div class="poster-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative group">
                 <div>
                     <div class="w-16 h-16 bg-black text-white rounded-xl flex items-center justify-center text-3xl mb-6 mx-auto border border-white/20">
@@ -197,8 +331,135 @@
         </div>
     </footer>
 
+    <!-- Iframe invisível para submissão do formulário de auditoria do TCLE -->
+    <iframe name="hidden_tcle_iframe" id="hidden_tcle_iframe" style="display:none;"></iframe>
+
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 1. Bloqueio absoluto da tecla ESC para impedir fechamento do modal
+        window.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                e.preventDefault();
+            }
+        });
+
+        function toggleAceiteButton() {
+            const chk = document.getElementById('chk-accept');
+            const btn = document.getElementById('btn-accept');
+            if (chk.checked) {
+                btn.disabled = false;
+                btn.classList.remove('bg-slate-300', 'text-slate-400', 'opacity-60', 'cursor-not-allowed');
+                btn.classList.add('bg-carmim-600', 'hover:bg-carmim-700', 'text-white', 'cursor-pointer', 'active:scale-95', 'shadow-md', 'hover:shadow-lg');
+            } else {
+                btn.disabled = true;
+                btn.classList.add('bg-slate-300', 'text-slate-400', 'opacity-60', 'cursor-not-allowed');
+                btn.classList.remove('bg-carmim-600', 'hover:bg-carmim-700', 'text-white', 'cursor-pointer', 'active:scale-95', 'shadow-md', 'hover:shadow-lg');
+            }
+        }
+
+        // 2. Gerar Hash Único de Sessão
+        function gerarSessionHash() {
+            if (window.crypto && window.crypto.randomUUID) {
+                return window.crypto.randomUUID();
+            }
+            return 'HASH-' + Math.random().toString(36).substring(2, 15) + '-' + Date.now();
+        }
+
+        // 3. Obter Endereço IP via API externa com suporte a fallback
+        async function obterIPUsuario() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                if (!response.ok) throw new Error("Erro na api de IP");
+                const data = await response.json();
+                return data.ip;
+            } catch (err) {
+                try {
+                    const fallback = await fetch('https://ipapi.co/json/');
+                    const dataFallback = await fallback.json();
+                    return dataFallback.ip || "IP_INDISPONIVEL";
+                } catch (e) {
+                    return "IP_NAO_CAPTURADO";
+                }
+            }
+        }
+
+        // 4. Processar o Aceite ao clicar no botão 'CONTINUAR'
+        async function processarAceite() {
+            // Fazer o popup sumir imediatamente ao clicar
+            const modal = document.getElementById('tcle-modal');
+            modal.classList.add('fade-out');
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.classList.remove('overflow-y-hidden');
+            }, 400);
+
+            // Coletar e submeter os metadados em segundo plano
+            const idTermo = "TCLE-CODOMA-2026-V1";
+            const sessionHash = gerarSessionHash();
+            const ipUsuario = await obterIPUsuario();
+            
+            const portaAcesso = window.location.port || (window.location.protocol === 'https:' ? '443' : '80');
+
+            const dadosNavegador = JSON.stringify({
+                userAgent: navigator.userAgent,
+                idioma: navigator.language,
+                plataforma: navigator.platform,
+                resolucaoTela: `${window.screen.width}x${window.screen.height}`,
+                fusoHorario: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                portaAcesso: portaAcesso
+            });
+
+            const dataHoraAceite = new Date().toISOString();
+
+            const payload = {
+                idTermo,
+                sessionHash,
+                ipUsuario,
+                dadosNavegador,
+                dataHoraAceite
+            };
+
+            // Enviar silenciosamente em segundo plano
+            submeterFormularioSilencioso(payload);
+        }
+
+        // 5. Envio silencioso em segundo plano para o Google Forms ou servidor
+        function submeterFormularioSilencioso(dados) {
+            const googleFormsURL = "https://docs.google.com/forms/d/e/1FAIpQLSd_wK_NDu-1yXKPUqIXye6XfmMWAZi6DZU4FPpXtQSin-A5ag/formResponse";
+
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = googleFormsURL;
+            form.target = 'hidden_tcle_iframe';
+
+            const campos = {
+                'entry.902748262': dados.idTermo,
+                'entry.1184233755': dados.sessionHash,
+                'entry.763999749': dados.ipUsuario,
+                'entry.1367059357': dados.dadosNavegador,
+                'entry.1918240027': dados.dataHoraAceite
+            };
+
+            for (const key in campos) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = campos[key];
+                form.appendChild(input);
+            }
+
+            document.body.appendChild(form);
+
+            try {
+                form.submit();
+            } catch (e) {
+                console.warn("Submissão via iframe falhou, tentando fallback...", e);
+            } finally {
+                setTimeout(() => form.remove(), 1000);
+            }
+        }
     </script>
 </body>
 </html>
